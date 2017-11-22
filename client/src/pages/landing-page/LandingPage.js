@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Col, Row, Container } from "./../components/Grid";
+import { Col, Row, Container } from "../../components/Grid/index";
 
-class PodcastHomePage extends Component {
+class LandingPage extends Component {
   state = {
 
   };
@@ -26,4 +26,4 @@ class PodcastHomePage extends Component {
   };
 }
 
-export default PodcastHomePage;
+export default LandingPage;

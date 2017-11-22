@@ -1,11 +1,13 @@
-import React, { Component } from 'react';
-import Button from "../../partials/Button";
-import Input from "../../partials/Input";
+import React, {Component} from 'react';
+import Button from "../../partials/button/Button";
+import Input from "../../partials/input/Input";
 import "./AccountSettings.css";
 
 class AccountSettings extends Component {
   state = {
-
+    username: "",
+    email: "",
+    password: ""
   };
 
   handleInputChange = event => {
@@ -20,17 +22,17 @@ class AccountSettings extends Component {
   };
 
   render() {
-   
+
     return (
       <div>
         <form>
           <h2>Account Settings:</h2>
-          <div> 
+          <div>
             <div>
               <label>Username: </label>
-              <Input   
-                onChange={this.handleInputChange} 
-                value={this.value}
+              <Input
+                onChange={this.handleInputChange}
+                value={this.state.username}
                 name="username"
                 type="text"
                 className="form-control"
@@ -52,15 +54,15 @@ class AccountSettings extends Component {
 
             <div>
               <label>Email: </label>
-              <Input 
-                onChange={this.handleInputChange} 
-                value={this.value}
+              <Input
+                onChange={this.handleInputChange}
+                value={this.state.email}
                 name="email"
                 type="text"
                 className="form-control"
                 id="email"
                 required=""
-               />
+              />
 
               <Button
                 value="Submit"
@@ -76,9 +78,9 @@ class AccountSettings extends Component {
 
             <div>
               <label>Password: </label>
-              <Input 
-                onChange={this.handleInputChange} 
-                value={this.value}
+              <Input
+                onChange={this.handleInputChange}
+                value={this.state.password}
                 name="password"
                 type="text"
                 className="form-control"

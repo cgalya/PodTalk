@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Col, Row, Container } from "./../components/Grid";
+import { Col, Row, Container } from "../../components/Grid/index";
 
-class LandingPage extends Component {
+class UserHomePage extends Component {
   state = {
 
   };
@@ -26,4 +26,4 @@ class LandingPage extends Component {
   };
 }
 
-export default LandingPage;
+export default UserHomePage;

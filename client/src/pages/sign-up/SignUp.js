@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
-import Button from "../../partials/Button";
-import Input from "../../partials/Input";
+import Button from "../../partials/button/Button";
+import Input from "../../partials/input/Input";
 import "./SignUp.css";
 
 class SignUp extends Component {
   state = {
-
+    username: "",
+    email: "",
+    password1: "",
+    password2: ""
   };
 
   handleInputChange = event => {
@@ -29,7 +32,7 @@ class SignUp extends Component {
               <label>Username: </label>
               <Input   
                 onChange={this.handleInputChange} 
-                value={this.value}
+                value={this.state.username}
                 name="username"
                 type="text"
                 className="form-control"
@@ -42,7 +45,7 @@ class SignUp extends Component {
               <label>Email: </label>
               <Input 
                 onChange={this.handleInputChange} 
-                value={this.value}
+                value={this.state.email}
                 name="email"
                 type="text"
                 className="form-control"
@@ -55,11 +58,11 @@ class SignUp extends Component {
               <label>Password: </label>
               <Input 
                 onChange={this.handleInputChange} 
-                value={this.value}
-                name="password"
+                value={this.state.password1}
+                name="password1"
                 type="text"
                 className="form-control"
-                id="password"
+                id="password1"
                 required=""
               />
             </div>
@@ -68,11 +71,11 @@ class SignUp extends Component {
               <label>Confirm password: </label>
               <Input 
                 onChange={this.handleInputChange} 
-                value={this.value}
-                name="password"
+                value={this.state.password2}
+                name="password2"
                 type="text"
                 className="form-control"
-                id="password"
+                id="password2"
                 required=""
               />
             </div>
