@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import PodcastCard from "./../components/podcast-card";
-import List from "./../components/list";
+import PodcastCard from "./../components/podcast-card/PodcastCard";
+import List from "./../components/list/List";
 
 class PodcastSearchResults extends Component {
   state = {

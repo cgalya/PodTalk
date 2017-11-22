@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Button from "./../partials/Button";
-import Input from "./../partials/Input";
+import Button from "../../partials/Button";
+import Input from "../../partials/Input";
 import "./AccountSettings.css";
 
 class AccountSettings extends Component {

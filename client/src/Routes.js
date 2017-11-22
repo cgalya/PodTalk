@@ -6,8 +6,8 @@ import PodcastSearchResults from './pages/PodcastSearchResults';
 import ProfilePage from './pages/ProfilePage';
 import EpisodePage from './pages/EpisodePage';
 import UserHomePage from './pages/UserHomePage';
-import AccountSettings from './pages/AccountSettings';
-import SignUp from './pages/SignUp';
+import AccountSettings from './pages/account-settings/AccountSettings';
+import SignUp from './pages/sign-up/SignUp';
 
 const Routes = () => (
    <Router>
