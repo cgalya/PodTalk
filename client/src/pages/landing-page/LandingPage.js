@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
-import { Col, Row, Container } from "../../components/Grid/index";
+import LandingPageIntro from './../../components/landing-page-intro/LandingPageIntro';
+import Input from './../../partials/input/Input';
+import Button from './../../partials/button/Button';
+
 
 class LandingPage extends Component {
   state = {
-
+    search: ""
   };
 
   handleInputChange = event => {
@@ -20,8 +23,19 @@ class LandingPage extends Component {
   render() {
    
     return (
-    	<Container fluid>
-    	</Container>
+      <div>
+        <LandingPageIntro />
+        <Input
+          onChange={this.handleInputChange}
+          value={this.state.search}
+          name="search"
+          type="text"
+          className="form-control"
+          id="search"
+          required=""
+        />
+        <Button label="search" />
+      </div>
     );
   };
 }
