@@ -3,6 +3,7 @@ import { Col, Row, Container } from "./../components/Grid";
 import API from "./../utils/API";
 import Main from "./../components/Main";
 import { PodcastList, PodcastListItem } from "./../components/list";
+import he from "he";
 
 
 class Podcasts extends Component {
@@ -25,25 +26,26 @@ class Podcasts extends Component {
   }
 
   handleFormSubmit = event => {
-    this.setState({
-      title: "",
-      description: "",
-      image: "",
-      episodes: []
-    });
     event.preventDefault();
     var replaced = this.state.title.split(' ').join('+');
     API.search(replaced).then(res => this.setState({
-      title: res.data.title,
-      description: res.data.description,
-      image: res.data.image,
-      episodes: res.data.items
+      title: res.data.rss.title,
+      description: res.data.rss.description,
+      image: res.data.rss.image,
+      episodes: res.data.rss.items
     }))
     .catch(err => console.log(err));   
     
   }
 
+  handleStripHTML = (description) => {
+    var stripped = description.replace(/<[^>]+>/g, '');
+    var decoded = he.decode(stripped)
+    return decoded;
+  }
+
   render() {
+    //console.log(this.state.episodes[0]);
     return (
       <Container fluid>
         <Row>
@@ -79,6 +81,7 @@ class Podcasts extends Component {
                     description={episode.description}
                     link={episode.link}
                     handlePodcastSave={this.handlePodcastSave}
+                    handleStripHTML={this.handleStripHTML}
                   />
                 );
               })}

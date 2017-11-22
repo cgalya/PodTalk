@@ -12,28 +12,30 @@ module.exports = {
         function(callback) {
           axios.get(url).then(function(res) {
             //console.log(res);
-            return callback(null, res.data.results[0].feedUrl);
+            return callback(null, res.data.results[0].feedUrl); // here
           });
         },
 
-        function(feedUrl, callback) {
+        function(feedUrl, callback) {  // here
           Feed.load(feedUrl, function(err, rss) {
             //console.log(rss);
             if(err){
               console.log(err);
               return callback(err)
             }
-            callback(null, rss);
+            callback(null, rss); // here
           });
         }
 
-      ], function(err, rss) {
+      ], function(err, rss) {  // here
           if(err) {
             console.log(err)
           }
           else {
           //console.log(rss);
-          res.json(rss);
+          res.json({  // in here
+            rss: rss
+          });
          }
       });
     }

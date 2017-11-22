@@ -6,7 +6,7 @@ export const PodcastListItem = props =>
     <div>
     	<h3><a href={props.link} target='_blank'>{props.title}</a>
 				<button onClick={() => props.handlePodcastSave(props.title)} className='btn btn-success'><strong>Save</strong></button>
-        <p>{props.description}</p>
+        <p>{props.handleStripHTML(props.description)}</p>
     	</h3>
     </div>
   </li>;
