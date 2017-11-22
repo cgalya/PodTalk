@@ -3,15 +3,10 @@ import Routes from './Routes';
 import Footer from './partials/Footer';
 import './App.css';
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-        <Routes/>
-        <Footer/>
-      </div>
-    );
-  }
-}
+const App = () => 
+	<div>
+	  <Routes />
+	  <Footer />
+  </div>;
 
 export default App;
