@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import Logo from "../logo/Logo";
+import Button from "../button/Button";
+import Input from "../input/Input";
 import './Header.css';
 
 const Header = (props) => (
@@ -18,6 +21,19 @@ const Header = (props) => (
     <Link to="/home">User Home Page</Link>
     <Link to="/settings">Account Settings</Link>
     <Link to="/sign-up">Sign Up</Link>
+    
+    <Logo
+      src="../podcast-mic-symbol.png"
+    />
+    <Input></Input>
+    <Button
+      name="Home"
+      label="Home"
+    />
+    <Button
+      name="Profile"
+      label="Profile"
+    />
   </div>
 );
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PodcastCard = () =>
+const PodcastCard = (props) =>
   <div> 
   </div>;
 
