@@ -1,7 +1,4 @@
 import React, { Component } from 'react';
-import Logo from "../../partials/logo/Logo";
-import Button from "../../partials/button/Button";
-import Input from "../../partials/input/Input";
 import EpisodeCard from "../../components/episode-card/EpisodeCard";
 import CommentCard from "../../components/comment-card/CommentCard";
 import AddComment from "../../components/add-comment/AddComment";
@@ -9,9 +6,9 @@ import List from "../../components/list/List";
 
 class EpisodePage extends Component {
   state = {
-    podcast_title: "",
+    podcast: {},
     episode: {},
-    comments: []
+    episode_comments: []
   };
 
   handleInputChange = event => {
@@ -36,21 +33,22 @@ class EpisodePage extends Component {
         ) : (
         <div>
           <EpisodeCard
-            image={this.state.episode.image}
-            podcast_title={this.state.podcast_title}
+            key={this.state.episode.title}
+            image={this.state.podcast.image}
+            podcast_title={this.state.podcast.title}
             episode_title={this.state.episode.title}
-            description={this.state.episode.description}
+            episode_description={this.state.episode.description}
+            episode_release_date={this.state.episode.pub_date}
+            url={this.state.episode.url}
           />
-          <AddComment
-
-          />
-          <List length={this.state.comments.length}>
-            {this.state.comments.map(comment => {
+          <AddComment />
+          <List length={this.state.episode_comments.length}>
+            {this.state.episode_comments.map(comment => {
               return (
                 <CommentCard
                   key={comment.title}
                   author={comment.author}
-                  timestamp={comment.timestamp}
+                  comment_timestamp={comment.timestamp}
                   message={comment.message}
                 />
               );

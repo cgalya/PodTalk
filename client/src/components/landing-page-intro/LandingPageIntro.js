@@ -1,5 +1,6 @@
 import React from 'react';
 import Logo from './../../partials/logo/Logo';
+import "./LandingPageIntro.css";
 
 
 const LandingPageIntro = () => (

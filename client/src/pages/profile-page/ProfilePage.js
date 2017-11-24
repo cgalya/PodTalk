@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Button from "../../partials/button/Button";
 import PodcastCard from "../../components/podcast-card/PodcastCard";
 import CommentCard from "../../components/comment-card/CommentCard";
 import List from "../../components/list/List";
@@ -7,7 +6,7 @@ import List from "../../components/list/List";
 class ProfilePage extends Component {
   state = {
     podcasts: [],
-    comments: []
+    user_comments: []
   };
 
   handleInputChange = event => {
@@ -36,10 +35,10 @@ class ProfilePage extends Component {
               {this.state.podcasts.map(podcast => {
                 return (
                   <PodcastCard
-                    src={this.state.podcast.image}
-                    title={this.state.podcast.title}
-                    desc={this.state.podcast.description}
-                    subscribed={this.state.podcast.status}
+                    image={this.state.podcast.image}
+                    podcast_title={this.state.podcast.title}
+                    podcast_description={this.state.podcast.description}
+                    subscribed={this.state.podcast.subscribed}
                   />
                 );
               })}
@@ -48,19 +47,19 @@ class ProfilePage extends Component {
           )}
         </div>
         <div>
-          {!this.state.comments ? (
+          {!this.state.userComments ? (
               <li>
-                <h3 style={{ marginTop: "10px", marginBottom: "15px" }}><span><em>No comments to display.</em></span></h3>
+                <h3 style={{ marginTop: "10px", marginBottom: "15px" }}><span><em>No userComments to display.</em></span></h3>
               </li>
             ) : (
             <div> 
-              <List length={this.state.comments.length}>
-                {this.state.comments.map(comment => {
+              <List length={this.state.user_comments.length}>
+                {this.state.user_comments.map(comment => {
                   return (
                     <CommentCard
                       key={comment.title}
                       author={comment.author}
-                      timestamp={comment.timestamp}
+                      comment_timestamp={comment.timestamp}
                       message={comment.message}
                     />
                   );

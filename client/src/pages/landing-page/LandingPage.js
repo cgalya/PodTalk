@@ -3,7 +3,6 @@ import LandingPageIntro from './../../components/landing-page-intro/LandingPageI
 import Input from './../../partials/input/Input';
 import Button from './../../partials/button/Button';
 
-
 class LandingPage extends Component {
   state = {
     search: ""

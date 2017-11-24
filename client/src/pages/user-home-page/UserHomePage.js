@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Button from "../../partials/button/Button";
 import PodcastCard from "../../components/podcast-card/PodcastCard";
 import CommentCard from "../../components/comment-card/CommentCard";
 import List from "../../components/list/List";
@@ -7,7 +6,7 @@ import List from "../../components/list/List";
 class UserHomePage extends Component {
   state = {
     podcasts: [],
-    podcastpodcastComments: []
+    podcast_comments: []
   };
 
   handleInputChange = event => {
@@ -36,10 +35,10 @@ class UserHomePage extends Component {
               {this.state.podcasts.map(podcast => {
                 return (
                   <PodcastCard
-                    src={this.state.podcast.image}
-                    title={this.state.podcast.title}
-                    desc={this.state.podcast.description}
-                    subscribed={this.state.podcast.status}
+                    image={this.state.podcast.image}
+                    podcast_title={this.state.podcast.title}
+                    podcast_description={this.state.podcast.description}
+                    subscribed={this.state.podcast.subscribed}
                   />
                 );
               })}
@@ -54,13 +53,13 @@ class UserHomePage extends Component {
               </li>
             ) : (
             <div> 
-              <List length={this.state.podcastComments.length}>
-                {this.state.podcastComments.map(comment => {
+              <List length={this.state.podcast_comments.length}>
+                {this.state.podcast_comments.map(comment => {
                   return (
                     <CommentCard
                       key={comment.title}
                       author={comment.author}
-                      timestamp={comment.timestamp}
+                      comment_timestamp={comment.timestamp}
                       message={comment.message}
                     />
                   );

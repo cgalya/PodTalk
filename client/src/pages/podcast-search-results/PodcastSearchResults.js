@@ -31,8 +31,11 @@ class PodcastSearchResults extends Component {
           {this.state.cards.map(card => {
             return (
               <PodcastCard
-                key={card.title}
-                title={card.title}
+                key={this.state.podcast.title}
+                image={this.state.podcast.image}
+                podcast_title={this.state.podcast.title}
+                podcast_description={this.state.podcast.description}
+                subscribed={this.state.podcast.subscribed}
               />
             );
           })}

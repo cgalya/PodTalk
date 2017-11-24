@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import Logo from "../../partials/logo/Logo";
-import Button from "../../partials/button/Button";
 import Input from "../../partials/input/Input";
-import ArtworkThumbnail from "../../partials/artwork-thumbnail/ArtworkThumbnail";
 import PodcastCard from "../../components/podcast-card/PodcastCard";
 import EpisodeCard from "../../components/episode-card/EpisodeCard";
 import List from "../../components/list/List";
@@ -10,7 +7,8 @@ import List from "../../components/list/List";
 class PodcastHomePage extends Component {
   state = {
     podcast: {},
-    episodes: []
+    episodes: [],
+    podcast_comments: []
   };
 
   handleInputChange = event => {
@@ -35,10 +33,10 @@ class PodcastHomePage extends Component {
         ) : (
         <div>
           <PodcastCard
-            src={this.state.podcast.image}
-            title={this.state.podcast.title}
-            desc={this.state.podcast.description}
-            subscribed={this.state.podcast.status}
+            image={this.state.podcast.image}
+            podcast_title={this.state.podcast.title}
+            podcast_description={this.state.podcast.description}
+            subscribed={this.state.podcast.subscribed}
           />
 
           <List length={this.state.episodes.length}>
@@ -50,9 +48,11 @@ class PodcastHomePage extends Component {
               return (
                 <EpisodeCard
                   key={episode.title}
-                  title={episode.title}
-                  desc={episode.description}
-                  pub_date={episode.pub_date}
+                  image={this.state.podcast.image}
+                  podcast_title={this.state.podcast.title}
+                  episode_title={episode.title}
+                  episode_description={episode.description}
+                  episode_release_date={episode.pub_date}
                   url={episode.url}
                 />
               );
