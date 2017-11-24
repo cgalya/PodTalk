@@ -11,24 +11,12 @@ class EpisodePage extends Component {
     episode_comments: []
   };
 
-  handleInputChange = event => {
-    const {name, value} = event.target;
-    this.setState({
-      [name]: value
-    });
-  };
-
-  handleFormSubmit = event => {
-    event.preventDefault();
-  };
-
   render() {
-   
     return (
       <div>
         {!this.state.episode ? (
           <li>
-            <h3 style={{ marginTop: "10px", marginBottom: "15px" }}><span><em>No episode to display.</em></span></h3>
+            <h3><em>No episode to display.</em></h3>
           </li>
         ) : (
         <div>

@@ -1,6 +1,6 @@
 import React from 'react';
 import PodcastThumbnail from "../../components/podcast-thumbnail/PodcastThumbnail";
-import Button from "../../partials/button/Button";
+import Button from "../button/Button";
 import "./EpisodeCard.css";
 
 const EpisodeCard = (props) =>
@@ -11,7 +11,7 @@ const EpisodeCard = (props) =>
   	<h2>{props.episode_description}</h2>
   	<h2>{props.episode_release_date}</h2>
   	<href src={props.url}><Button label="Play Episode" /></href>
-  	<Button label="Comments" />
+  	<Button className="episodeButton" label="Comments" />
   </div>;
 
 export default EpisodeCard;

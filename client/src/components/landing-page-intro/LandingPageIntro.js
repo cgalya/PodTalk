@@ -1,5 +1,5 @@
 import React from 'react';
-import Logo from './../../partials/logo/Logo';
+import Logo from '../logo/Logo';
 import "./LandingPageIntro.css";
 
 

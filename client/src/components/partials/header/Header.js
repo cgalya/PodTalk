@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import Logo from "../logo/Logo";
-import Button from "../button/Button";
-import Input from "../input/Input";
+import Logo from "../../logo/Logo";
+import Button from "../../button/Button";
+import Input from "../../input/Input";
 import './Header.css';
 
 const Header = (props) => (

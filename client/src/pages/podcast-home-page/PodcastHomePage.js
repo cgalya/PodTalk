@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Input from "../../partials/input/Input";
+import Input from "../../components/input/Input";
 import PodcastCard from "../../components/podcast-card/PodcastCard";
 import EpisodeCard from "../../components/episode-card/EpisodeCard";
 import List from "../../components/list/List";

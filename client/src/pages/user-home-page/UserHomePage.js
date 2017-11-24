@@ -9,25 +9,14 @@ class UserHomePage extends Component {
     podcast_comments: []
   };
 
-  handleInputChange = event => {
-    const {name, value} = event.target;
-    this.setState({
-      [name]: value
-    });
-  };
-
-  handleFormSubmit = event => {
-    event.preventDefault();
-  };
 
   render() {
-   
     return (
       <div>
         <div>
-          {!this.state.podcasts ? (
+          {(this.state.podcasts.length === 0) ? (
             <li>
-              <h3 style={{ marginTop: "10px", marginBottom: "15px" }}><span><em>No podcasts to display.</em></span></h3>
+              <h3><em>No podcasts to display.</em></h3>
             </li>
           ) : (
           <div>
@@ -47,9 +36,9 @@ class UserHomePage extends Component {
           )}
         </div>
         <div>
-          {!this.state.podcastComments ? (
+          {(this.state.podcast_comments.length === 0) ? (
               <li>
-                <h3 style={{ marginTop: "10px", marginBottom: "15px" }}><span><em>No podcastComments to display.</em></span></h3>
+                <h3><em>No comments to display.</em></h3>
               </li>
             ) : (
             <div> 

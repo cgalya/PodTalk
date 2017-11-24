@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from "../../partials/button/Button";
+import Button from "../button/Button";
 import "./CommentCard.css";
 
 const CommentCard = (props) =>

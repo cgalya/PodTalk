@@ -1,6 +1,6 @@
 import React from 'react';
 import PodcastThumbnail from "../../components/podcast-thumbnail/PodcastThumbnail";
-import Button from "../../partials/button/Button";
+import Button from "../button/Button";
 import "./PodcastCard.css";
 
 const PodcastCard = (props) =>

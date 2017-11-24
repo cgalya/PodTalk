@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import LandingPageIntro from './../../components/landing-page-intro/LandingPageIntro';
-import Input from './../../partials/input/Input';
-import Button from './../../partials/button/Button';
+import Input from '../../components/input/Input';
+import Button from '../../components/button/Button';
 
 class LandingPage extends Component {
   state = {
