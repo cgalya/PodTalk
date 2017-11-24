@@ -44,7 +44,7 @@ class EpisodePage extends Component {
           <AddComment
 
           />
-          <List length={this.state.episodes.length}>
+          <List length={this.state.comments.length}>
             {this.state.comments.map(comment => {
               return (
                 <CommentCard
