@@ -1,12 +1,20 @@
-import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+
+import React from 'react';
+import {BrowserRouter as Router} from "react-router-dom";
+import Routes from './Routes';
+import Footer from './components/partials/footer/Footer';
+import Header from './components/partials/header/Header';
+import './App.css';
 import Podcasts from "./pages/Podcasts";
 
-const App = () => 
-  <Router>
-    <div>
-      <Route exact path="/" component={Podcasts} />
-    </div>
-  </Router>;
+const App = () => (
+	<Router>
+		<div>
+			<Header />
+			<Routes />
+			<Footer />
+		</div>
+	</Router>
+);
 
 export default App;
