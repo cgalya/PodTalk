@@ -11,6 +11,7 @@ const App = () => (
 	<Router>
 		<div>
 			<Header />
+			<Podcasts />
 			<Routes />
 			<Footer />
 		</div>
