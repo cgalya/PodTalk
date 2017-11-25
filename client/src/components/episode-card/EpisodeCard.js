@@ -4,11 +4,11 @@ import Button from "../button/Button";
 import "./EpisodeCard.css";
 
 const EpisodeCard = (props) =>
-  <div> 
+  <div className="episode-card-box"> 
   	<PodcastThumbnail image={props.image} />
   	<h3>{props.podcast_title}</h3>
   	<h2>{props.episode_title}</h2>
-  	<h2>{props.episode_description}</h2>
+  	<h2>{props.handleStripHTML(props.episode_description)}</h2>
   	<h2>{props.episode_release_date}</h2>
   	<href src={props.url}><Button label="Play Episode" /></href>
   	<Button className="episodeButton" label="Comments" />
