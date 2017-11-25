@@ -4,8 +4,8 @@ const PORT = process.env.PORT || 3001;
 const routes = require("./routes");
 const app = express();
 const db = require("./models");
-var session = require("express-session");
-var passport = require("./config/passport");
+const session = require("express-session");
+const passport = require("./config/passport");
 
 
 // Serve up static assets (usually on heroku)
@@ -37,4 +37,5 @@ db.sequelize.sync().then(function() {
     app.listen(PORT, function() {
         console.log(`🌎 ==> Server now on port ${PORT}!`);
     });
+
 });
