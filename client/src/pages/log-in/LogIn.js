@@ -1,14 +1,11 @@
 import React, { Component } from 'react';
 import Button from "../../components/button/Button";
 import Input from "../../components/input/Input";
-import ErrorText from "../../components/error-text/ErrorText"
-import "./SignUp.css";
+import "./LogIn.css";
 
 class SignUp extends Component {
   state = {
-    errors: {},
     username: "",
-    email: "",
     password: ""
   };
 
@@ -21,16 +18,13 @@ class SignUp extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    console.log("yes");
-    // create a string for an HTTP body message
-    const name = encodeURIComponent(this.state.username);
-    const email = encodeURIComponent(this.state.email);
-    const password = encodeURIComponent(this.state.password);
-    const formData = `name=${name}&email=${email}&password=${password}`;
+    const email = encodeURIComponent(this.state.user.email);
+    const password = encodeURIComponent(this.state.user.password);
+    const formData = `email=${email}&password=${password}`;
 
     // create an AJAX request
     const xhr = new XMLHttpRequest();
-    xhr.open('post', '/auth/signup');
+    xhr.open('post', '/auth/login');
     xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
     xhr.responseType = 'json';
     xhr.addEventListener('load', () => {
@@ -46,6 +40,7 @@ class SignUp extends Component {
       } else {
         // failure
 
+        // change the component state
         const errors = xhr.response.errors ? xhr.response.errors : {};
         errors.summary = xhr.response.message;
 
@@ -61,12 +56,12 @@ class SignUp extends Component {
     return (
       <div>
         <form>
-          <h2>Sign Up:</h2>
-          <div> 
+          <h2>Log In:</h2>
+          <div>
             <div>
               <label>Username: </label>
-              <Input   
-                onChange={this.handleInputChange} 
+              <Input
+                onChange={this.handleInputChange}
                 value={this.state.username}
                 name="username"
                 type="text"
@@ -74,41 +69,25 @@ class SignUp extends Component {
                 id="username"
                 required=""
               />
-              <ErrorText error={this.state.errors.name} />
-            </div>
-
-            <div>
-              <label>Email: </label>
-              <Input 
-                onChange={this.handleInputChange} 
-                value={this.state.email}
-                name="email"
-                type="text"
-                className="form-control"
-                id="email"
-                required=""
-               />
-              <ErrorText error={this.state.errors.email} />
             </div>
 
             <div>
               <label>Password: </label>
-              <Input 
-                onChange={this.handleInputChange} 
-                value={this.state.password}
-                name="password"
+              <Input
+                onChange={this.handleInputChange}
+                value={this.state.password1}
+                name="password1"
                 type="text"
                 className="form-control"
-                id="password"
+                id="password1"
                 required=""
               />
-              <ErrorText error={this.state.errors.password} />
             </div>
 
           </div>
           <Button
             value="Submit"
-            label="Save"
+            label="Log In"
             onClick={this.handleFormSubmit}
           />
         </form>

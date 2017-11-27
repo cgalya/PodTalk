@@ -8,6 +8,8 @@ import EpisodePage from './pages/episode-page/EpisodePage';
 import UserHomePage from './pages/user-home-page/UserHomePage';
 import AccountSettings from './pages/account-settings/AccountSettings';
 import SignUp from './pages/sign-up/SignUp';
+import LogIn from './pages/log-in/LogIn';
+
 
 const Routes = () => (
   <div>
@@ -19,6 +21,7 @@ const Routes = () => (
     <Route exact path="/home" component={UserHomePage}/>
     <Route exact path="/settings" component={AccountSettings}/>
     <Route exact path="/sign-up" component={SignUp}/>
+    <Route exact path="/log-in" component={LogIn}/>
   </div>
 );
 

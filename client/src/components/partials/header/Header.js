@@ -1,15 +1,15 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import Logo from "../../logo/Logo";
 import './Header.css';
 
 const Header = (props) => (
   <div className="header">
     {/*<div className="left">*/}
-      {/*<img src="" alt=""/>*/}
+    {/*<img src="" alt=""/>*/}
     {/*</div>*/}
     {/*<div className="right">*/}
-      {/*{props.children}*/}
+    {/*{props.children}*/}
     {/*</div>*/}
     <Link to="/">Landing Page</Link>
     <Link to="/podcast-home">Podcast Home</Link>
@@ -19,8 +19,8 @@ const Header = (props) => (
     <Link to="/home">User Home Page</Link>
     <Link to="/settings">Account Settings</Link>
     <Link to="/sign-up">Sign Up</Link>
-    
-    <Logo src="" />
+    <Link to="/log-in">Log In</Link>
+    <Logo src=""/>
   </div>
 );
 
