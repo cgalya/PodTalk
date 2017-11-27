@@ -18,10 +18,11 @@ class LandingPage extends Component {
   };
 
   render() {
-   
     return (
       <div>
-        <LandingPageIntro />
+        <LandingPageIntro 
+          handlePodcastSelection={this.props.handlePodcastSelection}
+        />
       </div>
     );
   };

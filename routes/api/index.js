@@ -1,6 +1,8 @@
 const router = require("express").Router();
-const podcastRoutes = require("./podcasts");
+const podcastsRoutes = require("./podcasts");
+const episodesRoutes = require ("./episodes");
 
-router.use("/podcasts", podcastRoutes);
+router.use("/podcasts", podcastsRoutes);
+router.use("/episodes", episodesRoutes);
 
 module.exports = router;

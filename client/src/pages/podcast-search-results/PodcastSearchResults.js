@@ -22,9 +22,9 @@ class PodcastSearchResults extends Component {
    
     return (
       <div>
-      {!this.state.cards.length ? (
+      {this.state.cards.length === 0 ? (
         <li>
-          <h3 style={{ marginTop: "10px", marginBottom: "15px" }}><span><em>No podcast found.</em></span></h3>
+          <h3><em>No podcast found.</em></h3>
         </li>
       ) : (
         <List length={this.state.cards.length}>

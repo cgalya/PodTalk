@@ -1,42 +1,35 @@
-const app = require("express");
-const axios = require("axios");
-const Feed = require("rss-to-json");
-const async = require("async");
 
 module.exports = {
   findAll: function(req, res) {
-    var searchTerm = req.params.id;
-    var url = "https://itunes.apple.com/search?entity=podcast&term=" + searchTerm;
+        console.log(req.params.id);
+  var searchTerm = req.params.id;
+  var url = "https://itunes.apple.com/search?entity=podcast&term=" + searchTerm;
 
-    async.waterfall([
-        function(callback) {
-          axios.get(url).then(function(res) {
-            //console.log(res);
-            return callback(null, res.data.results[0].feedUrl); // here
-          });
-        },
+  $.ajax({
+    url: url,
+    method: "GET"
+  }).done(function(err, response) {
+      if(err)
+        console.log(err);
+      else {
+        var temp = JSON.parse(response);
+        console.log(temp.results);
+      }
+     // var temp = JSON.parse(response);
+     // return temp;
+     // podcastFeedUrl = temp.results[0].feedUrl;
+     // console.log(temp.results[0]);
+     // console.log("Number of results: " + temp.results.length);
+     // for (var i = 0; i < temp.results.length; i++){
+     //  console.log("AJAX feed url: " + temp.results[i].feedUrl);
+     // }
 
-        function(feedUrl, callback) {  // here
-          Feed.load(feedUrl, function(err, rss) {
-            //console.log(rss);
-            if(err){
-              console.log(err);
-              return callback(err)
-            }
-            callback(null, rss); // here
-          });
-        }
-
-      ], function(err, rss) {  // here
-          if(err) {
-            console.log(err)
-          }
-          else {
-          //console.log(rss);
-          res.json({  // in here
-            rss: rss
-          });
-         }
-      });
-    }
+     // releaseDate
+     // artistId
+     // artworkUrl100
+     // 30, 60, 100 & 600
+     // artistName
+     // genres
+  });
+  }
 };
