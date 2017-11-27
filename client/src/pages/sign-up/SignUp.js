@@ -5,12 +5,20 @@ import ErrorText from "../../components/error-text/ErrorText"
 import "./SignUp.css";
 
 class SignUp extends Component {
-  state = {
-    errors: {},
-    username: "",
-    email: "",
-    password: ""
-  };
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      errors: {},
+      username: "",
+      email: "",
+      password: ""
+    };
+
+    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleFormSubmit = this.handleFormSubmit.bind(this);
+  }
+
 
   handleInputChange = event => {
     const {name, value} = event.target;
@@ -19,9 +27,14 @@ class SignUp extends Component {
     });
   };
 
+  onClick = event => {
+    event.preventDefault();
+    console.log("hello");
+  };
+
   handleFormSubmit = event => {
     event.preventDefault();
-    console.log("yes");
+    console.log(this.state.username);
     // create a string for an HTTP body message
     const name = encodeURIComponent(this.state.username);
     const email = encodeURIComponent(this.state.email);
@@ -41,6 +54,7 @@ class SignUp extends Component {
         this.setState({
           errors: {}
         });
+        console.log(this.state.errors);
 
         console.log('The form is valid');
       } else {
@@ -108,8 +122,9 @@ class SignUp extends Component {
           </div>
           <Button
             value="Submit"
+            type="submit"
             label="Save"
-            onClick={this.handleFormSubmit}
+            onSubmit={this.handleFormSubmit}
           />
         </form>
       </div>

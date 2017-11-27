@@ -20,8 +20,8 @@ const Routes = () => (
     <Route exact path="/episode" component={EpisodePage}/>
     <Route exact path="/home" component={UserHomePage}/>
     <Route exact path="/settings" component={AccountSettings}/>
-    <Route exact path="/sign-up" component={SignUp}/>
-    <Route exact path="/log-in" component={LogIn}/>
+    <Route exact path="/signup" component={SignUp}/>
+    <Route exact path="/login" component={LogIn}/>
   </div>
 );
 

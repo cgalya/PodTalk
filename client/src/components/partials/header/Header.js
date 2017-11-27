@@ -18,8 +18,8 @@ const Header = (props) => (
     <Link to="/episode">Episode Page</Link>
     <Link to="/home">User Home Page</Link>
     <Link to="/settings">Account Settings</Link>
-    <Link to="/sign-up">Sign Up</Link>
-    <Link to="/log-in">Log In</Link>
+    <Link to="/signup">Sign Up</Link>
+    <Link to="/login">Log In</Link>
     <Logo src=""/>
   </div>
 );
