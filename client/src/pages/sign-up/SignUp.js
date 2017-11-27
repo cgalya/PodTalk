@@ -27,48 +27,13 @@ class SignUp extends Component {
     });
   };
 
-  onClick = event => {
+  onSubmit = event => {
     event.preventDefault();
     console.log("hello");
   };
 
   handleFormSubmit = event => {
     event.preventDefault();
-    console.log(this.state.username);
-    // create a string for an HTTP body message
-    const name = encodeURIComponent(this.state.username);
-    const email = encodeURIComponent(this.state.email);
-    const password = encodeURIComponent(this.state.password);
-    const formData = `name=${name}&email=${email}&password=${password}`;
-
-    // create an AJAX request
-    const xhr = new XMLHttpRequest();
-    xhr.open('post', '/auth/signup');
-    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-    xhr.responseType = 'json';
-    xhr.addEventListener('load', () => {
-      if (xhr.status === 200) {
-        // success
-
-        // change the component-container state
-        this.setState({
-          errors: {}
-        });
-        console.log(this.state.errors);
-
-        console.log('The form is valid');
-      } else {
-        // failure
-
-        const errors = xhr.response.errors ? xhr.response.errors : {};
-        errors.summary = xhr.response.message;
-
-        this.setState({
-          errors
-        });
-      }
-    });
-    xhr.send(formData);
   };
 
   render() {
